@@ -10,7 +10,7 @@ const AIRPORTS_LIST_ENDPOINT = '/list';
 router.get(AIRPORTS_LIST_ENDPOINT, cache('1 day'), async (req, res, next) => {
   try {
     const response = await axiosInstance.get(`${AIRPORTS_BASE_ENDPOINT}${AIRPORTS_LIST_ENDPOINT}`);
-    res.status(200).json(response);
+    res.status(200).json(response.data);
   } catch (error) {
     res.status(500).json({ error });
   }

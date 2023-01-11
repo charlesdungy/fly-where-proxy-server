@@ -3,9 +3,9 @@ const express = require('express');
 const helmet = require('helmet');
 const morgan = require('morgan');
 const rateLimit = require('express-rate-limit');
-const routes = require('./routes');
 
 require('dotenv').config();
+const routes = require('./routes');
 const port = process.env.PORT || 5005;
 
 const limitConfig = rateLimit({
